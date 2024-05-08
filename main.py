@@ -3,7 +3,10 @@ from tkinter import *
 from math import pi
 
 
-class Circle:
+class Shape:
+    def S(self):
+        pass
+class Circle(Shape):
     def __init__(self, x, y, r):
         self.x = x
         self.y = y
@@ -16,6 +19,12 @@ class Circle:
     def draw(self):
         canvas.create_oval(self.x - self.r, self.y - self.r, self.x + self.r, self.y + self.r)
 
+class Rect(Shape):
+    def __init__(self,a,h):
+        self.__a = a
+        self.__h = h
+    def S(self):
+        return self.__a * self.__h * 0.5
 
 room = Tk()
 canvas = Canvas(width=2000, height=2000, bg='white')
